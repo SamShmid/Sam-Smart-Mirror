@@ -224,7 +224,7 @@ if (typeof module !== "undefined") {module.exports = config;}
 ```
 This is the code I used for my config.js file on my Smart Mirror. This code tells the modules what to do and how to utilize the abilities of each module.
 
-Modules Include:
+Modules Include
 | **Module** | **Author** | **Link** | **Usage** |
 |:--:|:--:|:--:|:--:|
 | Alert | default | Included by default | displays notifications from other modules |
