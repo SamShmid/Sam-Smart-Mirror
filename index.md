@@ -25,6 +25,8 @@ My first milestone was setting up my Raspberri Pi and the Magic Mirror2 software
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WaIqpAlDoYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+
 ``` javascript
 /* Magic Mirror Config Sample
  *
