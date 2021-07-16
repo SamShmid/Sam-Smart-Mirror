@@ -24,3 +24,7 @@ My final milestone is the increased reliability and accuracy of my robot. I amel
 My first milestone was setting up my Raspberri Pi and the Magic Mirror2 software. I installed the Raspberry Pi OS on a sd card than inserted it into my Raspberry Pi. After setting up the software I enabled SSH and VNC in order to be able to connect to the Raspberry Pi with my computer. I installed the Magic Mirror2 software, but I intially ran into problems starting up the software until i realzied you have to change directories to do so. After getting that working I installed modules, and I was doing so I ran into problems in the config file because there were errors in my code. Than with the help of my instructor we went through the code and found a missing "}" to be the culprit. After this everything was smooth sailing and I was able to configure the software without issue.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WaIqpAlDoYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+``` javascript
+
+```
