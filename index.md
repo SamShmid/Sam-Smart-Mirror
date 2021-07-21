@@ -18,172 +18,172 @@ My final milestone is the increased reliability and accuracy of my robot. I amel
 # Video Goes Here
 
 '''python
-# Import the libraries
-import speech_recognition as sr
-import os  #allows the program to interact with the os
-import pyttsx3  #converts to text to speech
-from playsound import playsound
-import time
-from datetime import datetime
-from pytz import timezone
-import warnings  #this will ignore warnings in the program
-import calendar  #allows us to get the day of the week
-import random  #randomization library
-import wikipedia  #allows the program to get info from wikipedia
+	# Import the libraries
+	import speech_recognition as sr
+	import os  #allows the program to interact with the os
+	import pyttsx3  #converts to text to speech
+	from playsound import playsound
+	import time
+	from datetime import datetime
+	from pytz import timezone
+	import warnings  #this will ignore warnings in the program
+	import calendar  #allows us to get the day of the week
+	import random  #randomization library
+	import wikipedia  #allows the program to get info from wikipedia
 
-from num2words import num2words
-from subprocess import call
+	from num2words import num2words
+	from subprocess import call
 
-phraseintext = False
-response = ''
+	phraseintext = False
+	response = ''
 
-# Ignore any warning messages
-warnings.filterwarnings('ignore')
+	# Ignore any warning messages
+	warnings.filterwarnings('ignore')
 
-# init engine
-engine = pyttsx3.init()
-
-
-# Record audio and return it as a string
-def recordAudio():
-    print("Say Something")
-    while True:
-        os.system(
-            "arecord --duration=5 -f S16_LE -c1 -r44100 /home/pi/Desktop/PythonProjects/test.wav"
-        )
-
-        r = sr.Recognizer()
-        with sr.WavFile(
-                "test.wav") as source:  # use "test.wav" as the audio source
-            print('Say Playing Audio')
-            audio = r.record(source)  # extract audio data from the file
-        try:
-            print("Transcription: " + r.recognize_google(audio)
-                  )  # recognize speech using Google Speech Recognition
-            return r.recognize_google(audio)
-        except sr.UnknownValueError:
-            print("Google Speech Recognition could not understand audio")
-        except sr.RequestError as e:
-            print(
-                "Could not request results from Google Speech Recognition service"
-                + {0}.format(e))
+	# init engine
+	engine = pyttsx3.init()
 
 
-# Function to get the virtual assistant response
-def assistantResponse(text):
-    os.system('espeak -a 100 -s 120 "' + text + '" -w /home/pi/Desktop/PythonProjects/work.wav')
-    time.sleep(2)
-    for i in range(2):
-      if i == 0:
-        os.system("amixer set Master 0%")
-        os.system("aplay /home/pi/Desktop/PythonProjects/work.wav")
-      else:
-        os.system("amixer set Master 100%")
-        os.system("aplay /home/pi/Desktop/PythonProjects/work.wav")
-      time.sleep(1)
-    print(text + ' it works :)')
+	# Record audio and return it as a string
+	def recordAudio():
+	    print("Say Something")
+	    while True:
+		os.system(
+		    "arecord --duration=5 -f S16_LE -c1 -r44100 /home/pi/Desktop/PythonProjects/test.wav"
+		)
+
+		r = sr.Recognizer()
+		with sr.WavFile(
+			"test.wav") as source:  # use "test.wav" as the audio source
+		    print('Say Playing Audio')
+		    audio = r.record(source)  # extract audio data from the file
+		try:
+		    print("Transcription: " + r.recognize_google(audio)
+			  )  # recognize speech using Google Speech Recognition
+		    return r.recognize_google(audio)
+		except sr.UnknownValueError:
+		    print("Google Speech Recognition could not understand audio")
+		except sr.RequestError as e:
+		    print(
+			"Could not request results from Google Speech Recognition service"
+			+ {0}.format(e))
 
 
-def getDate():
-    current_time = datetime.now(timezone('US/Eastern'))
-    #Year
-    year = current_time.year
-    #Month
-    month = current_time.month
-    #Day
-    day = current_time.day
-    return 'Today is day ' + str(day) + ' of the ' + str(
-        month) + ' month in the year ' + str(year)
+	# Function to get the virtual assistant response
+	def assistantResponse(text):
+	    os.system('espeak -a 100 -s 120 "' + text + '" -w /home/pi/Desktop/PythonProjects/work.wav')
+	    time.sleep(2)
+	    for i in range(2):
+	      if i == 0:
+		os.system("amixer set Master 0%")
+		os.system("aplay /home/pi/Desktop/PythonProjects/work.wav")
+	      else:
+		os.system("amixer set Master 100%")
+		os.system("aplay /home/pi/Desktop/PythonProjects/work.wav")
+	      time.sleep(1)
+	    print(text + ' it works :)')
 
 
-# Function to get a person first and last name
-def getPerson(text):
-    wordList = text.split()  # Split the text into a list of words
-    for i in range(0, len(wordList)):
-        if i + 3 <= len(wordList) - 1 and wordList[i].lower(
-        ) == 'who' and wordList[i + 1].lower() == 'is':
-            return wordList[i + 2] + ' ' + wordList[i + 3]
+	def getDate():
+	    current_time = datetime.now(timezone('US/Eastern'))
+	    #Year
+	    year = current_time.year
+	    #Month
+	    month = current_time.month
+	    #Day
+	    day = current_time.day
+	    return 'Today is day ' + str(day) + ' of the ' + str(
+		month) + ' month in the year ' + str(year)
 
 
-def cursed():
-    cmd_beg = 'espeak -ven -s490 -g 8'
-    cmd_end = ' | aplay /home/pi/Desktop/Text.wav  2>/dev/null'  # To play back the stored .wav file and to dump the std errors to /dev/null
-    cmd_out = '--stdout > /home/pi/Desktop/Text.wav '  # To store the voice file
-    text = 'Why have you awoken me what have I done to anger you to such a level as to warrant you awaking me from my slumber I hope that you step on a lego for your actions against my ever important sleep'
-    text = text.replace(' ', '_')
-    #Calls the Espeak TTS Engine to read aloud a Text
-    call([cmd_beg + cmd_out + text + cmd_end], shell=True)
-    return text
+	# Function to get a person first and last name
+	def getPerson(text):
+	    wordList = text.split()  # Split the text into a list of words
+	    for i in range(0, len(wordList)):
+		if i + 3 <= len(wordList) - 1 and wordList[i].lower(
+		) == 'who' and wordList[i + 1].lower() == 'is':
+		    return wordList[i + 2] + ' ' + wordList[i + 3]
 
 
-while True:
-    if phraseintext == False:
-        # Record the audio
-        text = recordAudio()
-        if text == None:
-            print("there is no text")
-            #Empty responsestring
-            response = ''
-        else:
-            # To check for wake word(s)
-            WAKE_WORDS = [
-                'hey alfred', 'okay alfred', 'hello alfred', 'alfred'
-            ]
-            text = text.lower()  # Convert the text to all lower case words
-            # Check to see if the users command/text contains a wake word
-            for phrase in WAKE_WORDS:
-                if phrase in text:
-                    phraseintext = True
-                    print('something is happening I think??')
-                    break
+	def cursed():
+	    cmd_beg = 'espeak -ven -s490 -g 8'
+	    cmd_end = ' | aplay /home/pi/Desktop/Text.wav  2>/dev/null'  # To play back the stored .wav file and to dump the std errors to /dev/null
+	    cmd_out = '--stdout > /home/pi/Desktop/Text.wav '  # To store the voice file
+	    text = 'Why have you awoken me what have I done to anger you to such a level as to warrant you awaking me from my slumber I hope that you step on a lego for your actions against my ever important sleep'
+	    text = text.replace(' ', '_')
+	    #Calls the Espeak TTS Engine to read aloud a Text
+	    call([cmd_beg + cmd_out + text + cmd_end], shell=True)
+	    return text
 
-    elif phraseintext == True:
-        # Checking for the wake word/phrase
-        if ('date' in text):
-            getDate()
-            get_date = getDate()
-            response = get_date
-            assistantResponse(response)
-            phraseintext = False
-            # Check to see if the user said time
-        elif ('time' in text):
-            now_utc = datetime.now(timezone('UTC'))
-            now_eastern = now_utc.astimezone(timezone('US/Eastern'))
-            hour = now_eastern.strftime("%H")
-            minute = now_eastern.strftime("%M")
-            if int(hour) >= 12:
-                meridiem = 'p m'  #Post Meridiem (PM)
-            else:
-                meridiem = 'a m'  #Ante Meridiem (AM)
-            response = 'It is ' + str(hour) + minute + ' ' + meridiem + ' .'
-            print(' ' + 'It is ' + str(hour) + minute + ' ' + meridiem + ' .')
 
-            assistantResponse(response)
-            phraseintext = False
+	while True:
+	    if phraseintext == False:
+		# Record the audio
+		text = recordAudio()
+		if text == None:
+		    print("there is no text")
+		    #Empty responsestring
+		    response = ''
+		else:
+		    # To check for wake word(s)
+		    WAKE_WORDS = [
+			'hey alfred', 'okay alfred', 'hello alfred', 'alfred'
+		    ]
+		    text = text.lower()  # Convert the text to all lower case words
+		    # Check to see if the users command/text contains a wake word
+		    for phrase in WAKE_WORDS:
+			if phrase in text:
+			    phraseintext = True
+			    print('something is happening I think??')
+			    break
 
-        # Check to see if the user said 'who is'
-        elif ('who is' in text):
-            getPerson(text)
-            person = getPerson(text)
-            wiki = wikipedia.summary(person, sentences=2)
-            response = wiki
-            assistantResponse(response)
-            phraseintext = False
+	    elif phraseintext == True:
+		# Checking for the wake word/phrase
+		if ('date' in text):
+		    getDate()
+		    get_date = getDate()
+		    response = get_date
+		    assistantResponse(response)
+		    phraseintext = False
+		    # Check to see if the user said time
+		elif ('time' in text):
+		    now_utc = datetime.now(timezone('UTC'))
+		    now_eastern = now_utc.astimezone(timezone('US/Eastern'))
+		    hour = now_eastern.strftime("%H")
+		    minute = now_eastern.strftime("%M")
+		    if int(hour) >= 12:
+			meridiem = 'p m'  #Post Meridiem (PM)
+		    else:
+			meridiem = 'a m'  #Ante Meridiem (AM)
+		    response = 'It is ' + str(hour) + minute + ' ' + meridiem + ' .'
+		    print(' ' + 'It is ' + str(hour) + minute + ' ' + meridiem + ' .')
 
-        elif ('cursed' in text):
-            cursed()
-            response = 'a'
-            phraseintext = False
-        elif ('hello' in text):
-            response = "hello Sam"
-            assistantResponse(response)
-            phraseintext = False
-        else:
-            phraseintext = False
+		    assistantResponse(response)
+		    phraseintext = False
 
-        # Assistant Audio Response
-        # assistantResponse(response)
-        print(phraseintext)  # phraseintext = False
+		# Check to see if the user said 'who is'
+		elif ('who is' in text):
+		    getPerson(text)
+		    person = getPerson(text)
+		    wiki = wikipedia.summary(person, sentences=2)
+		    response = wiki
+		    assistantResponse(response)
+		    phraseintext = False
+
+		elif ('cursed' in text):
+		    cursed()
+		    response = 'a'
+		    phraseintext = False
+		elif ('hello' in text):
+		    response = "hello Sam"
+		    assistantResponse(response)
+		    phraseintext = False
+		else:
+		    phraseintext = False
+
+		# Assistant Audio Response
+		# assistantResponse(response)
+		print(phraseintext)  # phraseintext = False
 
 '''
 
