@@ -398,7 +398,7 @@ This is the code I used for my config.js file on my Smart Mirror. This code tell
 
 Modules Include
 | **Module** | **Author** | **Link** | **Usage** |
-|:--:|:--:|:--:|:--:|
+|:----------:|:----------:|:--------:|:---------:|
 | Alert | default | Included by default | displays notifications from other modules |
 | Update Notification | default | Included by default | displays notification when a update for the Magic Mirror 2 software is available |
 | Clock | default | Included by default | displays the time |
