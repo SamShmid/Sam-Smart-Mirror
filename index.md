@@ -18,6 +18,7 @@ My final milestone is the increased reliability and accuracy of my robot. I amel
 # Video Goes Here
 
 '''python
+
 	# Import the libraries
 	import speech_recognition as sr
 	import os  #allows the program to interact with the os
