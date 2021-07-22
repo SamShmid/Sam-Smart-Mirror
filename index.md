@@ -13,7 +13,7 @@ My final milestone is the increased reliability and accuracy of my robot. I amel
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o_kXJyYwGho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Second Milestone
-My final milestone is the increased reliability and accuracy of my robot. I ameliorated the sagging and fixed the reliability of the finger. As discussed in my second milestone, the arm sags because of weight. I put in a block of wood at the base to hold up the upper arm; this has reverberating positive effects throughout the arm. I also realized that the forearm was getting disconnected from the elbow servo’s horn because of the weight stress on the joint. Now, I make sure to constantly tighten the screws at that joint.
+My second milestone was creating a custom virtual assistant named alfred. I created the virtual assistant in python. The program utilized a usb microphone and the speaker in my monitor to be able to take in audio and speak back to it. However, I ran into problems almost every step of the way, mainly the pythonlibrary for microhpones is not compatible with the raspberry pi. After getting that working I also ran into problems with the text to speech because the Raspberry Pi had problems processing the audio. Finally, after hours of debugging and trying out new libraries I was able to get it to work.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GdE4cMmf86I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
