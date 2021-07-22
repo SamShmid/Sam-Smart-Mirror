@@ -8,7 +8,7 @@ This will serve as a brief description of your project. Limit this to three sent
 ![Headstone Image](https://bluestampengineering.com/wp-content/uploads/2016/05/improve.jpg)
   
 # Final Milestone
-My final milestone is the increased reliability and accuracy of my robot. I ameliorated the sagging and fixed the reliability of the finger. As discussed in my second milestone, the arm sags because of weight. I put in a block of wood at the base to hold up the upper arm; this has reverberating positive effects throughout the arm. I also realized that the forearm was getting disconnected from the elbow servo’s horn because of the weight stress on the joint. Now, I make sure to constantly tighten the screws at that joint. 
+My final milestone is the project completely assembled. I cut a piece of a trasnparent mirror and hot glued that onto the mirror as well as hot glueing a cardboard border around it. I ran into a bunch of trouble trying to cut the mirror piece as I realized it wasn't as easy as it seems, but in the end I was able to cover up my mistakes with my cardboard border. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o_kXJyYwGho" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -189,6 +189,7 @@ while True:
 
 ```
 
+This is the code I used for my virtual assistant. This code takes a recording from the microphone than transcribes that audio into text in order to be filtered through the various functions, and finally it does text to speech in order to have my virtual assistant to respond to me.
 
 # First Milestone
   
