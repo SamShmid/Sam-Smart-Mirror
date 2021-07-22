@@ -399,15 +399,15 @@ if (typeof module !== "undefined") {module.exports = config;}
 This is the code I used for my config.js file on my Smart Mirror. This code tells the modules what to do and how to utilize the abilities of each module.
 
 Modules Include
-| **Module** | **Author** | **Link** | **Usage** |
-|:----------:|:----------:|:--------:|:---------:|
-| Alert | default | Included by default | displays notifications from other modules |
-| Update Notification | default | Included by default | displays notification when a update for the Magic Mirror 2 software is available |
-| Clock | default | Included by default | displays the time |
-| Weather | default | Included by default | uses the openweather api to display local weather |
-| Newsfeed | default | Included by default | rotates through the newest headlines of the New York Times |
-| MMM-Jast | Made By jalibu | https://github.com/jalibu/MMM-Jast | a stock ticker that uses the Yahoo Finance API |
-| MMM-PGA | Made By mcl8on | https://github.com/mcl8on/MMM-PGA | displays upcoming PGA tournaments and when the tournament is ongoing displays information about it |
-| MMM-MyStandings | Made By vincep5 | https://github.com/vincep5/MMM-MyStandings | displays and gets ESPN standings for all major US sports |
-| MMM-pages | Made By edward-shen | https://github.com/edward-shen/MMM-pages | allows you to have multiple pages of modules |
-| MMM-page-dindicator | Made By edward-shen | https://github.com/edward-shen/MMM-page-indicator | allows you to switch through the pages and tells you what page you are on |
+Module | Author | Link | Usage 
+--- | --- | --- | --- 
+Alert | default | Included by default | displays notifications from other modules 
+Update Notification | default | Included by default | displays notification when a update for the Magic Mirror 2 software is available 
+Clock | default | Included by default | displays the time 
+Weather | default | Included by default | uses the openweather api to display local weather 
+Newsfeed | default | Included by default | rotates through the newest headlines of the New York Times 
+MMM-Jast | Made By jalibu | https://github.com/jalibu/MMM-Jast | a stock ticker that uses the Yahoo Finance API 
+MMM-PGA | Made By mcl8on | https://github.com/mcl8on/MMM-PGA | displays upcoming PGA tournaments and when the tournament is ongoing displays information about it 
+MMM-MyStandings | Made By vincep5 | https://github.com/vincep5/MMM-MyStandings | displays and gets ESPN standings for all major US sports 
+MMM-pages | Made By edward-shen | https://github.com/edward-shen/MMM-pages | allows you to have multiple pages of modules 
+MMM-page-dindicator | Made By edward-shen | https://github.com/edward-shen/MMM-page-indicator | allows you to switch through the pages and tells you what page you are on 
