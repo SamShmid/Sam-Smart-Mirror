@@ -258,6 +258,9 @@ let config = {
 	//   starts serveronly and then starts chrome browser
 	// false, default for all NON-armv6l devices
 	// true, force serveronly mode, because you want to.. no UI on this device
+```
+This is the main config file code don't editt this it is the code that is supplied by MagicMirror and it is what allows the code to work 
+``` javascript
 
 	modules: [
 		{
@@ -278,11 +281,31 @@ let config = {
 			config: {
 				weatherProvider: "openweathermap",
 				type: "forecast",
-				location: "New York",
-				locationID: "5128581", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
+				location: "ENTER NAME OF LOCATION HERE",
+				locationID: "ENTER LOCATION ID HERE FROM THE WEATHER API", //ID from http://bulk.openweathermap.org/sample/city.list.json.gz; unzip the gz file and find your city
 				apiKey: "ENTER API KEY HERE"
 			}
 		},
+		
+		{
+			module: "newsfeed",
+			position: "bottom_left",
+			config: {
+				feeds: [
+					{
+						title: "New York Times",
+						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+					}
+					],
+				showSourceTitle: true,
+				showPublishDate: true,
+				broadcastNewsFeeds: true,
+				broadcastNewsUpdates: true
+			}
+		},
+```
+This is the config files for the default modules these are the modules supplied by MagicMirror and they will basically all be configured already and you will mainly want to set there position and in the case of the weather module you will actually need to get a API key from their website
+``` javascript
 		{
 			module: "MMM-Jast",
 			position: "top_bar",
@@ -305,31 +328,17 @@ let config = {
 				numberDecimalsPercentages: 1,
 				virtualHorizontalMultiplier: 2,
 				stocks: [
-					{ name: "Bitcoin USD", symbol: "BTC-USD"},
-					{ name: "Civic USD", symbol: "CVC-USD"},
-					{ name: "ProShares UltraPro Short Dow 30", symbol: "SDOW"},
+					{ name: "Tesla", symbol: "BTC-USD"},
+					{ name: "Apple", symbol: "CVC-USD"},
+					{ name: "Microsoft", symbol: "SDOW"},
 					{ name: "Rackspace Technology, Inc.", symbol: "RXT"},
 					{ name: "Host Hotels & Resorts, Inc.", symbol: "HST"},
 					]
 			}
 		},
-
-		{
-			module: "newsfeed",
-			position: "bottom_left",
-			config: {
-				feeds: [
-					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					}
-					],
-				showSourceTitle: true,
-				showPublishDate: true,
-				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
-			}
-		},
+```
+This is my stock ticker api it utilizes the Yahoo Finance API and the module itself is made by jalibu (link to their github page is in the table below) in the bottom it allows you to add your own stock tickers and it will give you up to date information on the stocks prices
+``` javascript
 
 		{
 	module: 'MMM-PGA',
