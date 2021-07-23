@@ -5,7 +5,7 @@ This will serve as a brief description of your project. Limit this to three sent
 |:---:|:---:|:---:|:---:|
 | Samuel S. | SAR High School | Electrical Engineering | Rising Junior |
 
-![Headstone Image](https://bluestampengineering.com/wp-content/uploads/2016/05/improve.jpg)
+![Headstone Image](Sam-Smart-Mirror/IMG_0448.jpg)
   
 # Final Milestone
 My final milestone is the project completely assembled. I cut a piece of a trasnparent mirror and hot glued that onto the mirror as well as hot glueing a cardboard border around it. I ran into a bunch of trouble trying to cut the mirror piece as I realized it wasn't as easy as it seems, but in the end I was able to cover up my mistakes with my cardboard border. 
