@@ -328,11 +328,11 @@ This is the config files for the default modules these are the modules supplied 
 				numberDecimalsPercentages: 1,
 				virtualHorizontalMultiplier: 2,
 				stocks: [
-					{ name: "Tesla", symbol: "BTC-USD"},
-					{ name: "Apple", symbol: "CVC-USD"},
-					{ name: "Microsoft", symbol: "SDOW"},
-					{ name: "Rackspace Technology, Inc.", symbol: "RXT"},
-					{ name: "Host Hotels & Resorts, Inc.", symbol: "HST"},
+					{ name: "Tesla", symbol: "TSLA"},
+					{ name: "Apple", symbol: "AAPL"},
+					{ name: "Microsoft", symbol: "MSFT"},
+					{ name: "Alphabet", symbol: "GOOG"},
+					{ name: "AMD", symbol: "AMD"},
 					]
 			}
 		},
