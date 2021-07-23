@@ -36,15 +36,18 @@ import wikipedia  #allows the program to get info from wikipedia
 from num2words import num2words
 from subprocess import call
 
+```
+Importing the libraries necessary in order to run the code
+``` python
+
 phraseintext = False
 response = ''
 
 # Ignore any warning messages
 warnings.filterwarnings('ignore')
-
-# init engine
-engine = pyttsx3.init()
-
+```
+Setting up a global boolean that controls whether the 'wake word' was heard and setting up a command in order to block out all unneed warning messages 
+``` python
 
 # Record audio and return it as a string
 def recordAudio():
@@ -69,6 +72,10 @@ def recordAudio():
             print(
                 "Could not request results from Google Speech Recognition service"
                 + {0}.format(e))
+		
+```
+This is the function that records the users voice and than using Google Speech Recognition technology converts that audio file into text that the rest of the program can process
+``` python
 
 
 # Function to get the virtual assistant response
@@ -84,7 +91,9 @@ def assistantResponse(text):
         os.system("aplay /home/pi/Desktop/PythonProjects/work.wav")
       time.sleep(1)
     print(text + ' it works :)')
-
+```
+This the function that gives the assistants response the response is gathered from a while true loop below and than this function is called which takes the response text and than using the espeak library gives a response (Note; it actually espondes twice because my Raspberry Pi had a glitch that it needed to run audio files at least once in order to process it properly so as you can see the first time it runs it it is muted and than second time it plays is the one you hear outloud)
+``` python
 
 def getDate():
     current_time = datetime.now(timezone('US/Eastern'))
@@ -105,6 +114,11 @@ def getPerson(text):
         if i + 3 <= len(wordList) - 1 and wordList[i].lower(
         ) == 'who' and wordList[i + 1].lower() == 'is':
             return wordList[i + 2] + ' ' + wordList[i + 3]
+	    
+```
+These two functions are two of three main commands for the the voice assisttant these two allow you to get the date and to say 'who is' and than a name to search up and than it will read out wikipedias summary of that page
+
+``` python
 
 
 def cursed():
@@ -138,6 +152,10 @@ while True:
                     phraseintext = True
                     print('something is happening I think??')
                     break
+
+```
+This is the first half of the while True loop and its job is to check if the user said the 'wake word' if they did than it sets phraseintext = True and it runs the next part of the program which actually uses the text after the 'wake word' to run commands 
+``` python
 
     elif phraseintext == True:
         # Checking for the wake word/phrase
@@ -188,6 +206,8 @@ while True:
         print(phraseintext)  # phraseintext = False
 
 ```
+
+The second half of the while True loop checks if after the 'wake word' the user said any key words or phrases that correspond with any commands also in this is second half is the third of the three main commands for the virtual assistant the time command unlike the rest it isn't a function but rather it is written directly into the elif statement that checks for if the key word is said
 
 This is the code I used for my virtual assistant. This code takes a recording from the microphone than transcribes that audio into text in order to be filtered through the various functions, and finally it does text to speech in order to have my virtual assistant to respond to me.
 
