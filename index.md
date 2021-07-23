@@ -18,6 +18,7 @@ My second milestone was creating a custom virtual assistant named alfred. I crea
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GdE4cMmf86I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+The following code is the code I used for my virtual assistant. This code takes a recording from the microphone than transcribes that audio into text in order to be filtered through the various functions, and finally it does text to speech in order to have my virtual assistant to respond to me.
 
 ``` python 
 # Import the libraries
@@ -208,8 +209,6 @@ This is the first half of the while True loop and its job is to check if the use
 ```
 
 The second half of the while True loop checks if after the 'wake word' the user said any key words or phrases that correspond with any commands also in this is second half is the third of the three main commands for the virtual assistant the time command unlike the rest it isn't a function but rather it is written directly into the elif statement that checks for if the key word is said
-
-This is the code I used for my virtual assistant. This code takes a recording from the microphone than transcribes that audio into text in order to be filtered through the various functions, and finally it does text to speech in order to have my virtual assistant to respond to me.
 
 # First Milestone
   
@@ -419,7 +418,8 @@ if (typeof module !== "undefined") {module.exports = config;}
 ```
 This is the code I used for my config.js file on my Smart Mirror. This code tells the modules what to do and how to utilize the abilities of each module.
 
-Modules Include
+#### Modules Include
+
 Module | Author | Link | Usage 
 --- | --- | --- | --- 
 Alert | default | Included by default | displays notifications from other modules 
