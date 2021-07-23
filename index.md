@@ -1,5 +1,6 @@
 ﻿# Sam's Smart Mirror
-This will serve as a brief description of your project. Limit this to three sentences because it can become overly long at that point. This copy should draw the user in and make she/him want to read more.
+ 
+My project is a Smart Mirror, a smart mirror is a screen with a transparent yet reflective covering in order to simulate a mirror and still have the screen beneath it shine through in addition to that I added a custom virtual assistant named Alfred to run in the background.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:---:|:---:|:---:|:---:|
