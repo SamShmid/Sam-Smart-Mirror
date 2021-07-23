@@ -217,7 +217,7 @@ My first milestone was setting up my Raspberri Pi and the Magic Mirror2 software
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WaIqpAlDoYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+The following code is the code in the config.js file for the Magic Mirror it is what allows you to customize how each module is shown and to configure what each module does in order for it to run properly
 
 ``` javascript
 /* Magic Mirror Config Sample
@@ -259,7 +259,7 @@ let config = {
 	// false, default for all NON-armv6l devices
 	// true, force serveronly mode, because you want to.. no UI on this device
 ```
-This is the main config file code don't editt this it is the code that is supplied by MagicMirror and it is what allows the code to work 
+This is the main config file code don't edit this it is the code that is supplied by MagicMirror and it is what allows the code to work and the modules to be properly configurated 
 ``` javascript
 
 	modules: [
@@ -337,7 +337,7 @@ This is the config files for the default modules these are the modules supplied 
 			}
 		},
 ```
-This is my stock ticker api it utilizes the Yahoo Finance API and the module itself is made by jalibu (link to their github page is in the table below) in the bottom it allows you to add your own stock tickers and it will give you up to date information on the stocks prices
+This is my stock ticker api it utilizes the Yahoo Finance API and the module itself is made by jalibu (link to their github page is in the table below) in the bottom it allows you to add your own stock tickers and it will give you up to date information on the stocks prices 
 ``` javascript
 
 		{
@@ -359,6 +359,11 @@ This is my stock ticker api it utilizes the Yahoo Finance API and the module its
 				remoteFavoritesFile: "https://dl.dropboxusercontent.com/s/7my######/favorites.json" //"utilities/favorites.json" 
 			}
 		},
+```
+This is a module that displays PGA tournaaments it either displays information for a upcoming tournament or information for a current tournament like standings scores etc.
+``` javascript
+
+
 
 {
 			module: "MMM-MyStandings",
@@ -391,6 +396,9 @@ This is my stock ticker api it utilizes the Yahoo Finance API and the module its
 				showByDivision: true,
 				fadeSpeed: 1000,
 			},
+```
+This is a general sports module that uses the ESPN API to gather standings on a multitude of sports that can be configured to show standings for each divison of any desired sports or just show one team for a certain sport 
+``` javascript
 		},
 
 
@@ -425,7 +433,7 @@ This is my stock ticker api it utilizes the Yahoo Finance API and the module its
 if (typeof module !== "undefined") {module.exports = config;}
 
 ```
-This is the code I used for my config.js file on my Smart Mirror. This code tells the modules what to do and how to utilize the abilities of each module.
+The last two modules are both made by edward shen (his github is linked in the table below) these modules are what always me to have multiple pages of modules and in doing so allows me to have more modules in my mirror even with a small screen
 
 #### Modules Include
 
